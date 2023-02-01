@@ -1,10 +1,10 @@
 ---
 layout: "../../layouts/LayoutProyecto.astro"
-title: "Portafolio"
-link: "/portfolio/"
-image: "/portfolio/proyectos/portafolio-hm.jpg"
+title: "MovieTK"
+link: "https://gaburra-m.github.io/movietk/"
+image: "/portfolio/proyectos/movietk.jpg"
 techs: 
-    - Astro
+    - React
     - JavaScript
     - HTML
     - CSS
