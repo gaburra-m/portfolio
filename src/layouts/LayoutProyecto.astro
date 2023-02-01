@@ -1,0 +1,80 @@
+---
+import Head from "../components/Head.astro"
+const { frontmatter } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Proyecto: { frontmatter.title }</title>
+</head>
+<body>
+    <Head />
+    <main class="md container">
+        <section>
+            <img class="title__img" src={frontmatter.image} alt="`Imagen del proyecto de ${proyecto.frontmatter.title}`">
+        </section>
+        <section class="slot">
+            <slot />
+        </section>
+    </main>
+</body>
+</html>
+<style is:global>
+    :root{
+        --bg-dark: #090713;
+        --text: #EAFEFF;
+        --primary: #00FFFF;
+        --bg-card: #14102D;
+        --border-card: #2C274F;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html{
+        background-color: var(--bg-dark);
+        color: var(--text);  
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    a{
+        color: var(--primary);
+        text-decoration: none;
+    }
+    
+    .container{
+        max-width: 1080px;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .md{
+        margin-bottom: 3.125rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .title__img{
+        border-radius: 10px;
+        border: 1px solid var(--border-card);
+        width: 100%;
+    }
+    .slot{
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-card);
+        border-radius: 10px;
+        margin-top: -30px;
+        position: relative;
+        padding: 10px;
+        width: 95%;
+    }
+</style>

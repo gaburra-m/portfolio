@@ -1,0 +1,60 @@
+---
+import Head from "../components/Head.astro"
+const { title } = Astro.props
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>{ title }</title>
+</head>
+<body>
+    <Head />
+    <main class="mb container">
+        <slot />
+    </main>
+</body>
+</html>
+
+<style is:global>
+    :root{
+        --bg-dark: #090713;
+        --text: #EAFEFF;
+        --primary: #00FFFF;
+        --bg-card: #14102D;
+        --border-card: #2C274F;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html{
+        background-color: var(--bg-dark);
+        color: var(--text);
+        font-family: 'Montserrat', sans-serif;
+        scroll-behavior: smooth;
+    }
+    .mb{
+        margin-bottom: 3.125rem;
+    }
+    .container{
+        max-width: 1080px;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    @media screen and (max-width: 48rem) {
+        .container{
+            
+        }
+    }
+</style>

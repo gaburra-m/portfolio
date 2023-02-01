@@ -1,0 +1,100 @@
+---
+const links = [{
+    title: "Inicio",
+    link: "/"
+},
+{
+    title: "Proyectos",
+    link: "/#proyectos"
+},
+{
+    title: "Servicios",
+    link: "/servicios"
+}]
+---
+<header class="container">
+    <div>
+        <a href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="52" fill="none"><path fill="#fff" fill-rule="evenodd" d="M17.629 29.987c7.063 0 12.788-5.726 12.788-12.789S24.692 4.41 17.63 4.41c-7.063 0-12.789 5.725-12.789 12.788 0 7.063 5.726 12.789 12.789 12.789Zm0 4.41c9.498 0 17.198-7.7 17.198-17.199C34.827 7.7 27.127 0 17.63 0 8.13 0 .43 7.7.43 17.198c0 9.499 7.7 17.199 17.199 17.199ZM.446 35.214a2.205 2.205 0 0 1 2.606-1.712l28.734 5.941a2.205 2.205 0 0 1-.893 4.319L2.16 37.82a2.205 2.205 0 0 1-1.713-2.606Z" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M.882 49.868a2.205 2.205 0 0 1 1.567-2.695l28.365-7.51a2.205 2.205 0 1 1 1.128 4.263l-28.364 7.51a2.205 2.205 0 0 1-2.696-1.568ZM17.629 2.205C17.629.987 18.616 0 19.834 0H32.18a2.205 2.205 0 1 1 0 4.41H19.834a2.205 2.205 0 0 1-2.205-2.205Z" clip-rule="evenodd"/></svg>
+        </a>
+        
+    </div>
+    <nav>
+        <ul>
+            {links.map((link) => <li><a href={link.link}>{link.title}</a></li>)}
+        </ul>
+    </nav>
+</header>
+<style>
+    header{
+        background-color: var(--bg-dark);
+        padding: 1rem 0;
+        margin: 50px 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    nav ul{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+    li{
+        list-style-type: none;
+    }
+    li a{
+        text-decoration: none;
+        color: var(--text);
+        transition: color .5s;
+        font-size: 1.25rem;
+        position: relative;
+        padding-bottom: .3rem;
+    }
+    li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: .125rem;
+    border-radius: .25rem;
+    background-color: var(--primary);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+    }
+    li a:hover{
+        color: var(--primary)
+    }
+    li a:hover::before {
+    color: var(--primary);
+    transform-origin: left;
+    transform: scaleX(1);
+}
+@media screen and (max-width: 26.5625rem){
+    header{
+        margin: 0 auto;
+    }
+    nav{
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-card);
+        border-radius: 50px;
+        padding: 0 15px;
+        /* position: fixed;
+        bottom: 30px;
+        left: 0;
+        width: 100%; */
+
+        display: flex;
+        justify-content: center;
+    }
+    nav ul{
+        padding: 0;
+    }
+    li a{
+        font-size: 1rem;
+    }
+}
+</style>
