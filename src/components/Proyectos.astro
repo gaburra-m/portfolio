@@ -7,7 +7,7 @@ const proyectos = await Astro.glob('../pages/proyectos/*.md');
 {proyectos.slice(0, 3).map((proyecto) => (
   <article class="card">
     <section class="card__img">
-        <a href={proyecto.url}><img src={proyecto.frontmatter.image} alt="`Imagen del proyecto de ${proyecto.frontmatter.title}`"></a>
+        <a href={proyecto.url}><img src={proyecto.frontmatter.image} alt={`Imagen del proyecto de ${proyecto.frontmatter.title}`}></a>
     </section>
     <section class="card__info">
         <h3>{proyecto.frontmatter.title}</h3>
