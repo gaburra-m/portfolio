@@ -24,7 +24,7 @@ const { frontmatter } = Astro.props;
             <section>
                 <p class="data">Proyecto: <span>{ frontmatter.title }</span></p>
                 <p class="data">Web: <a href={ frontmatter.link } target="_blank" no-referrer>{ frontmatter.link }</a></p>
-                <p class="data">Tecnologias:</p>
+                <p class="data">Tecnologías:</p>
                 <div class="pills">
                     {frontmatter.techs.map((t:any) => <p class="pill">{t}</p>)}
                 </div>
