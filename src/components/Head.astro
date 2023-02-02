@@ -18,6 +18,7 @@ const links = [{
     <nav>
         <ul>
             {links.map((link) => <li><a href={link.link}>{link.title}</a></li>)}
+            <a class="cta" href="/portfolio/cv/CV-GabrielMM.pdf" download="CV-GabrielMM">Descarga mi CV</a>
         </ul>
     </nav>
 </header>
@@ -36,6 +37,7 @@ const links = [{
         display: flex;
         flex-direction: row;
         gap: 1rem;
+        align-items: center;
     }
     li{
         list-style-type: none;
@@ -68,8 +70,21 @@ const links = [{
     color: var(--primary);
     transform-origin: left;
     transform: scaleX(1);
-}
-@media screen and (max-width: 26.5625rem){
+    }
+    .cta{
+        border:1px solid var(--primary);
+        border-radius: 10px;
+        color: var(--primary);
+        font-weight: 600;
+        padding: 10px 15px;
+        transition: all .6s;
+    }
+    .cta:hover{
+        background-color: var(--primary);
+        color: var(--bg-card);
+    }
+
+@media screen and (max-width: 27.75rem){
     header{
         margin: 0 auto;
     }
@@ -87,6 +102,18 @@ const links = [{
     }
     li a{
         font-size: 1rem;
+    }
+    .cta{
+        position: fixed;
+        bottom: 0;
+        background-color: var(--primary);
+        border-radius: 0;
+        color: var(--bg-card);
+        font-size: 1.25rem;
+        left: 0;
+        padding: .625rem;
+        text-align: center;
+        width: 100%;
     }
 }
 </style>
