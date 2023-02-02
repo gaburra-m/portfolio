@@ -21,7 +21,7 @@ const techs = [{
 }]
 ---
 <div class="techs">
-    {techs.map((tech) => <article>
+    {techs.map((tech) => <article class="tech">
     <img src={tech.svg} alt={tech.title}>
     <span>{tech.title}</span>
     </article>)}
@@ -32,23 +32,25 @@ const techs = [{
         width: 100%;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
         gap: 1rem;
     }
-    article{
-        
-        width: 100%;
+    .tech{
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: .5rem;
+        gap: 1rem;
     }
-    @media screen and (max-width: 27.75remrem){
+    @media screen and (max-width: 27.75rem){
         img{
             width: 30px;
         }
         span{
             font-size: 12px;
+        }
+        .techs{
+            justify-content: center;
         }
     }
 </style>

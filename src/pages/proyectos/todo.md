@@ -2,6 +2,7 @@
 layout: "../../layouts/LayoutProyecto.astro"
 title: "Todo App"
 link: "https://gaburra-m.github.io/todo-app/"
+github: "https://github.com/gaburra-m/todo-app"
 image: "/portfolio/proyectos/todo.jpg"
 techs: 
     - React

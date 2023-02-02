@@ -25,6 +25,7 @@ const { frontmatter } = Astro.props;
             <section>
                 <p class="data">Proyecto: <span>{ frontmatter.title }</span></p>
                 <p class="data">Web: <a href={ frontmatter.link } target="_blank" no-referrer>{ frontmatter.link }</a></p>
+                {frontmatter.github !== "Sin Github" ? <p class="data">Github: <a href={ frontmatter.github} target="_blank" no-referrer>{ frontmatter.github }</a></p> : ""}
                 <p class="data">Tecnologías:</p>
                 <div class="pills">
                     {frontmatter.techs.map((t:any) => <p class="pill">{t}</p>)}
