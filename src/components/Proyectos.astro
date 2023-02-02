@@ -1,5 +1,6 @@
 ---
-const proyectos = await Astro.glob('../pages/proyectos/*.md'); 
+const proyectos = await Astro.glob('../pages/proyectos/*.md');
+const { frontmatter } = Astro.props;
 ---
 <section>
 <h2>Proyectos</h2>
@@ -11,6 +12,9 @@ const proyectos = await Astro.glob('../pages/proyectos/*.md');
     </section>
     <section class="card__info">
         <h3>{proyecto.frontmatter.title}</h3>
+        <div class="techs">
+            {proyecto.frontmatter.techs.map((t:any) => <p class="tech">{t}</p>)}
+        </div>
         <div class="card__info-links">
             <a href={proyecto.frontmatter.link} target="_blank" no-referrer>Ir a la web</a>
             <a href={proyecto.url}>Leer más</a>
@@ -52,12 +56,27 @@ const proyectos = await Astro.glob('../pages/proyectos/*.md');
         background-color: var(--bg-card);
         border-radius: 15px;
         border: 1px solid var(--border-card);
-        
         padding: 10px 15px;
         width: 300px;
     }
     h3{
         margin: 0;
+    }
+    .techs{
+        display: flex;
+        flex-wrap: wrap;
+        gap: .2rem;
+        margin: 10px 0;
+        width: 100%;
+    }
+    .tech{
+        background-color: var(--primary);
+        border-radius: 3.125rem;
+        color: var(--bg-card);
+        font-size: .7rem;
+        font-weight: 600;
+        margin: 0;
+        padding: .3125rem .625rem;
     }
     .card__info-links{
         margin-top: 10px;
