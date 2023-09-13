@@ -2,6 +2,9 @@
 import LayoutInicio from "../layouts/LayoutInicio.astro";
 import Proyectos from "../components/Proyectos.astro";
 import Hero from "../components/Hero.astro";
+if (1 === 1) {
+  return Astro.redirect("https://gaburra.vercel.app")
+}
 ---
 <LayoutInicio title="Inicio">
 	<Hero />
